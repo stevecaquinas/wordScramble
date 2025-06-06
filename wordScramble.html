@@ -14,6 +14,13 @@
       margin: 0;
     }
 
+    .center-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
     .game-container {
       display: grid;
       grid-template-columns: repeat(6, 60px);
@@ -63,9 +70,11 @@
   <h1>Word Scramble</h1>
   <p>The grid below contains five 5-letter words horizontally.</p>
   <p>Slide rows (→) and columns (↓) to solve!</p>
-  <div class="game-container" id="game"></div>
-  <p id="moves">Moves: 0</p>
-  <button class="btn" id="newGameBtn">New Game</button>
+  <div class="center-container">
+    <div class="game-container" id="game"></div>
+    <p id="moves">Moves: 0</p>
+    <button class="btn" id="newGameBtn">New Game</button>
+  </div>
 
   <script>
     const words = ["STACK", "STARS", "STONE", "TRUCK", "WORMS"];
