@@ -298,21 +298,23 @@
     }
 
     function checkWin() {
-      const won = grid.every((row, i) => row.join("") === originalGrid[i].join(""));
-      if (won) {
-        setTimeout(() => alert(`🎉 You solved it in ${moves} moves!`), 100);
-        if (moves < 50)
-        { alert(`You are a GENIUS!`)}
-        else if (moves < 100)
-        { alert(`You are a VERY SMART PERSON!`)}
-        else if (moves < 200)
-        { alert(`You are a SMART PERSON!`)}
-        else if (moves < 300)
-        { alert(`You are DEEPLY AVERAGE!`)}
-        else
-        { alert(`Wow you showed great commitment there!`)}
-      }
-    }
+  const won = grid.every((row, i) => row.join("") === originalGrid[i].join(""));
+  if (won) {
+    let feedback = "";
+    if (moves < 50)
+      feedback = "You are a GENIUS!";
+    else if (moves < 100)
+      feedback = "You are a VERY SMART PERSON!";
+    else if (moves < 200)
+      feedback = "You are a SMART PERSON!";
+    else if (moves < 300)
+      feedback = "You are DEEPLY AVERAGE!";
+    else
+      feedback = "Wow you showed great commitment there!";
+
+    setTimeout(() => alert(`🎉 You solved it in ${moves} moves!\n${feedback}`), 100);
+  }
+}
 
     window.addEventListener("DOMContentLoaded", () => {
       scramble();
